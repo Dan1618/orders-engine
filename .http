@@ -1,0 +1,70 @@
+
+
+### Variables
+@baseUrl = http://localhost:3000
+@contentType = application/json
+
+### Test the root endpoint
+GET {{baseUrl}}
+Accept: text/plain
+
+### Send a batch with ORDER_CREATED Event
+POST {{baseUrl}}/events
+Content-Type: {{contentType}}
+
+[
+  {
+    "eventId": "afaeeevt_01H7X1J8Y2Z3W4V5B6A7C8D9E0kaaa",
+    "orderId": "ord_98765afakaaa",
+    "type": "ORDER_CREATED",
+    "timestamp": 1716643923,
+    "payload": {
+      "amount": 129.99,
+      "shippingAddress": "123 Main St, New York, NY 10001",
+      "customerNote": "Please leave at the front door."
+    }
+  }
+]
+
+### Send a batch with PAYMENT_CAPTURED Event
+POST {{baseUrl}}/events
+Content-Type: {{contentType}}
+
+[
+  {
+    "eventId": "evt_01H7X1J8Y2Z3W4V5B6A7C8D9E1",
+    "orderId": "ord_98765",
+    "type": "PAYMENT_CAPTURED",
+    "timestamp": 1716644000,
+    "payload": {
+      "gatewayTransactionId": "tx_abc123xyz"
+    }
+  }
+]
+
+### Send a multi-event batch (Creation + Cancellation for a new order)
+POST {{baseUrl}}/events
+Content-Type: {{contentType}}
+
+[
+  {
+    "eventId": "evt_01H7X1J8Y2Z3W4V5B6A7C8D9E2",
+    "orderId": "ord_11223",
+    "type": "ORDER_CREATED",
+    "timestamp": 1716644100,
+    "payload": {
+      "amount": 45.50,
+      "shippingAddress": "456 Oak Ave, Boston, MA 02108"
+    }
+  },
+  {
+    "eventId": "evt_01H7X1J8Y2Z3W4V5B6A7C8D9E3",
+    "orderId": "ord_11223",
+    "type": "ORDER_CANCELLED",
+    "timestamp": 1716644150,
+    "payload": {
+      "reasonCode": "CUSTOMER_REQUEST",
+      "customerNote": "Changed my mind before shipping."
+    }
+  }
+]
