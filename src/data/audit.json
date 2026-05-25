@@ -1,0 +1,12 @@
+[
+  {
+    "eventId": "afaeeevt_01H7X1J8Y2Z3W4V5B6A7C8D9E0kaaa",
+    "orderId": "ord_98765afakaaa",
+    "type": "ORDER_CREATED",
+    "decision": "APPLIED",
+    "reason": "Order created successfully.",
+    "timestamp": 1716643923,
+    "processedAt": 1779720305584,
+    "processingTimeMs": 7
+  }
+]

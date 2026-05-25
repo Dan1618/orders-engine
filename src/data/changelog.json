@@ -1,0 +1,28 @@
+{
+  "ord_98765afakaaa": [
+    {
+      "eventId": "afaeeevt_01H7X1J8Y2Z3W4V5B6A7C8D9E0kaaa",
+      "type": "ORDER_CREATED",
+      "timestamp": 1716643923,
+      "changes": {
+        "amount": [
+          null,
+          129.99
+        ],
+        "shippingAddress": [
+          null,
+          "123 Main St, New York, NY 10001"
+        ],
+        "customerNote": [
+          null,
+          "Please leave at the front door."
+        ],
+        "status": [
+          null,
+          "CREATED"
+        ]
+      },
+      "appliedAt": 1779720305583
+    }
+  ]
+}

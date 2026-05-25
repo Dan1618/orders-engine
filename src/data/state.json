@@ -1,0 +1,13 @@
+{
+  "ord_98765afakaaa": {
+    "orderId": "ord_98765afakaaa",
+    "status": "CREATED",
+    "lastEventId": "afaeeevt_01H7X1J8Y2Z3W4V5B6A7C8D9E0kaaa",
+    "lastTimestamp": 1716643923,
+    "createdAt": 1716643923,
+    "updatedAt": 1716643923,
+    "amount": 129.99,
+    "shippingAddress": "123 Main St, New York, NY 10001",
+    "customerNote": "Please leave at the front door."
+  }
+}
