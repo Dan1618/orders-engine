@@ -54,7 +54,7 @@ export function processBatch(
 function processSingle(raw: unknown): ProcessingResult {
   const startTime = Date.now();
 
-  // 1. Validate structure (done outside the lock — pure computation, no shared state)
+  // 1. Validate structure
   const validation = validateEvent(raw);
   if (!validation.valid) {
     const partialId =
