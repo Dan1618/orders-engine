@@ -1,12 +1,12 @@
 ## Orders handling engine
 
-**installing**
+**installing: **
 `yarn install`
 
-**running**
+**running: **
 `yarn dev`
 
-**tests:**
+**tests: **
 `yarn test`
 
 
@@ -22,12 +22,9 @@
 ##### Potential security improvements
 ###### 1. HTTP Infrastructure & Transport
 - **Security Headers (Helmet):** Use the `helmet` middleware to set various HTTP headers that help protect against cross-site scripting (XSS), clickjacking, and other common attacks.
-- **SSL/TLS Enforcement:** Ensure the application is only accessible via HTTPS. In a production environment, this can be handled by a reverse proxy (like Nginx) or a load balancer.
 - **CORS Configuration:** If the API is accessed from a browser-based frontend, use the `cors` package to restrict origins that can interact with the API, rather than leaving it open with defaults.
 
 ###### 2. Authentication & Authorization
-- **API Authentication:** Currently, the routes are open. Implementing an authentication mechanism (e.g., API Keys, JWT, or OAuth2) would ensure that only authorized services can submit events or query order status.
-- **Role-Based Access Control (RBAC):** Restrict access to sensitive endpoints. For example, `POST /events` might require "write" permissions, while `GET /stats` might be restricted to "admin" or monitor roles.
 
 ###### 3. Input Validation & Body Limits
 - **Schema Validation:** Use a library like **Zod** or **Joi** to strictly validate the structure of the incoming event batches. This prevents processing malformed data that could lead to crashes or unstable states.
