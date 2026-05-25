@@ -15,11 +15,11 @@
 - **`GET /orders/:id`** – order status + change history + rejected events + duplicates
 - **`GET /stats`** – statistics (applied / rejected / duplicates / avg processing time)
 
-##### **Possible improvements**
+#### **Possible improvements**
 - currently the app uses `readFileSync`, using `readFile` can increase the performance but would need an additional order locking mechanism. Also other solutions could be applied for handling a huge traffic.
 - splitting code and writing more unit tests in eventEngine.ts
 
-##### Potential security improvements
+#### Potential security improvements
 ###### 1. HTTP Infrastructure & Transport
 - **Security Headers (Helmet):** Use the `helmet` middleware to set various HTTP headers that help protect against cross-site scripting (XSS), clickjacking, and other common attacks.
 - **CORS Configuration:** If the API is accessed from a browser-based frontend, use the `cors` package to restrict origins that can interact with the API, rather than leaving it open with defaults.
