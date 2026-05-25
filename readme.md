@@ -1,12 +1,12 @@
 ## Orders handling engine
 
-**installing: **
+**installing:**
 `yarn install`
 
-**running: **
+**running:**
 `yarn dev`
 
-**tests: **
+**tests:**
 `yarn test`
 
 
